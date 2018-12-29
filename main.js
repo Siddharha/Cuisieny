@@ -2,13 +2,13 @@ const electron = require('electron');
 const url = require('url');
 const path = require('path');
 
-let mainWindow;
+let mainWindow, addItemWindow;
 const {app,BrowserWindow, Menu} = electron;
 
 app.on('ready',function(){
     mainWindow = new BrowserWindow({
-        width:600,
-        height:500,
+        width:800,
+        height:600,
         titleBarStyle: 'hidden'
     });
 
@@ -26,6 +26,26 @@ app.on('ready',function(){
     });
 });
 
+function showAddItemWindow(){
+    addItemWindow = new BrowserWindow({
+        width: 500,
+        height:300,
+        resizable:false,
+        titleBarStyle: 'hidden',
+        parent:mainWindow,
+        modal: false
+        
+    });
+
+    addItemWindow.loadURL(url.format({
+        pathname:path.join(__dirname,'./main_window/add_window/add_item.html'),
+        protocol:'file:',
+        slashes: true
+    }));
+
+    
+}
+
 const menuTemplate = [
     {
         label:'File',
@@ -34,7 +54,7 @@ const menuTemplate = [
                 label:'Add Cuisine',
                 accelerator: process.platform == 'darwin'? 'Command + Shift + A': 'Ctrl + Shift + A',
                 click(){
-                    console.log('Not Implemented yet!'); 
+                    showAddItemWindow();
                 }
 },
 {
