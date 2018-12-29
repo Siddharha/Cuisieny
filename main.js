@@ -3,7 +3,7 @@ const url = require('url');
 const path = require('path');
 
 let mainWindow;
-const {app,BrowserWindow} = electron;
+const {app,BrowserWindow, Menu} = electron;
 
 app.on('ready',function(){
     mainWindow = new BrowserWindow({
@@ -17,4 +17,39 @@ app.on('ready',function(){
         protocol:'file:',
         slashes: true
     }));
+
+    const mainMenu = Menu.buildFromTemplate(menuTemplate);
+    Menu.setApplicationMenu(mainMenu);
+    
+    mainWindow.on('closed',function(){
+        app.quit();
+    });
 });
+
+const menuTemplate = [
+    {
+        label:'File',
+        submenu:[
+            {
+                label:'Add Cuisine',
+                accelerator: process.platform == 'darwin'? 'Command + Shift + A': 'Ctrl + Shift + A',
+                click(){
+                    console.log('Not Implemented yet!'); 
+                }
+},
+{
+    label:'Exit',
+    accelerator: process.platform == 'darwin'? 'Command + Shift + X': 'Ctrl + Shift + X',
+    click(){
+        app.exit();
+    }
+}
+]
+    }
+]
+
+if(process.platform == 'darwin'){
+    menuTemplate.unshift({
+        label:"Cuisieny"
+    });
+}
