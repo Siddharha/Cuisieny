@@ -31,6 +31,8 @@ function showAddItemWindow(){
         width: 500,
         height:300,
         resizable:false,
+        maximizable: false,
+        minimizable: false,
         titleBarStyle: 'hidden',
         parent:mainWindow,
         modal: false
