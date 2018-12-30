@@ -74,4 +74,14 @@ img {
     margin-right: 5px;
     margin-top: 10px;
 }
+.custom-select select{
+    /* background: #2d2d300d; */
+    background-color: #2D2D30;
+    color: #ADADAD;
+    float: right;
+    margin-top: 5px;
+    margin-right: 15px;
+    text-shadow:0 1px 0 rgba(0,0,0,0.4);
+}
+
    
