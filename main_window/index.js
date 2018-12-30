@@ -26,3 +26,16 @@ $(function () {
         isResizing = false;
     });
 });
+
+//loadListItem();
+
+//function loadListItem(){
+    const ul = $('list_item');
+    //ul.className = 'collection with-header';
+    const li = document.createElement('li');
+   // li.className = 'collection-item';
+    li.appendChild(document.createTextNode('hi this is item'))
+    ul.appendChild(li);
+
+    
+//}
