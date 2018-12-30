@@ -45,7 +45,7 @@ function showAddItemWindow(){
         slashes: true
     }));
 
-    
+    addItemWindow.webContents.openDevTools({mode:'undocked'});
 }
 
 const menuTemplate = [
