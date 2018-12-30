@@ -22,14 +22,12 @@ body {padding: 0px;margin: 0px;background-color: #2D2D30;border: 1px solid #6821
 
    #list_section{
        background: rgb(35, 35, 35);
-       float: left;
+       left: 0px;
        height: calc(100% - 30px);
-       resize: horizontal;
-       overflow: auto;
+       /* resize: horizontal;
+       overflow: auto; */
        color: white;
        padding: 5px;
-       display: -webkit-box;
-       width: 110px;
    }
 
    ul li {
@@ -55,13 +53,20 @@ body {padding: 0px;margin: 0px;background-color: #2D2D30;border: 1px solid #6821
     background: rgb(23, 23, 23);
     height: calc(100% - 30px);
     color: #5d5d5d;
-    display: -webkit-box;
-    padding: 5px;
+    padding-right: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    display: flex;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
 }
 
 #list_details h1{
     padding: 0px;
-    margin: 0px;
+    margin-left: 15px;
+    margin-top: 5px;
 }
 
    div#main_body{
@@ -69,3 +74,13 @@ body {padding: 0px;margin: 0px;background-color: #2D2D30;border: 1px solid #6821
        width: 100%;
        position: absolute;
    }
+
+   #drag {
+    position: absolute;
+    top: 1px;
+    height: calc(100% - 3px);
+    width: 3px;
+    cursor: ew-resize;
+    background: #444444;
+    box-shadow: 0 1px 2px 1px #35353585;
+}
