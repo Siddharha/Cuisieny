@@ -30,12 +30,15 @@ $(function () {
 
 
 function loadListItem(){
-    const ul = document.getElementsByName('ul');
-    ul.className = 'collection with-header';
-    const li = document.createElement('li');
-    li.className = 'collection-item';
-    li.appendChild(document.createTextNode('hi this is item'))
-    ul.appendChild(li);
+     const itmTable = document.querySelector('ul');
+     itmTable.className = 'collection with-header';
+     const itemLi = document.createElement('li');
+     itemLi.className = 'collection-item';
+     itemLi.appendChild(document.createTextNode('hi this is item'))
+     itmTable.appendChild(itemLi);
+
+    //console.log("hi");
+    
 
     
 }
