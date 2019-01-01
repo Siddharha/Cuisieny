@@ -63,7 +63,7 @@ body {padding: 0px;margin: 0px;background-color: #2D2D30;border: 1px solid #6821
     bottom: 0px;
 }
 
-#list_details h1{
+#list_details .main_body{
     padding: 0px;
     margin-left: 15px;
     margin-top: 5px;

@@ -27,15 +27,15 @@ $(function () {
     });
 });
 
-//loadListItem();
 
-//function loadListItem(){
-    const ul = $('list_item');
-    //ul.className = 'collection with-header';
+
+function loadListItem(){
+    const ul = document.getElementsByName('ul');
+    ul.className = 'collection with-header';
     const li = document.createElement('li');
-   // li.className = 'collection-item';
+    li.className = 'collection-item';
     li.appendChild(document.createTextNode('hi this is item'))
     ul.appendChild(li);
 
     
-//}
+}

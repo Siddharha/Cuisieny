@@ -84,4 +84,11 @@ img {
     text-shadow:0 1px 0 rgba(0,0,0,0.4);
 }
 
+#footer_control{position: absolute;bottom: 0px;width: 100%;/* background: green; *//* padding: 5px; */}
+#footer_control button{
+    background: #6eff001f;
+    color: whitesmoke;
+    float: right;
+    margin: 5px;
+    border-radius: 5px;}
    

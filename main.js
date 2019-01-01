@@ -41,7 +41,7 @@ function showAddItemWindow() {
         minimizable: false,
         titleBarStyle: 'hidden',
         parent: mainWindow,
-        modal: false
+        modal: true
 
     });
 
