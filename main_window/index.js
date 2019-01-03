@@ -1,7 +1,19 @@
+const electron = require('electron');
+const {app,ipcRenderer,remote} = electron;
+
+ 
 var isResizing = false,
     lastDownX = 0;
 
+  
+
 $(function () {
+
+    if(process.platform =='darwin'){
+        let main_custom_control = document.querySelector("#title-bar-btns");
+        main_custom_control.style.visibility = 'hidden';
+    }
+
     var container = $('#main_body'),
         left = $('#list_section'),
         right = $('#list_details'),
@@ -30,6 +42,7 @@ $(function () {
 
 
 function loadListItem(){
+    
      const itmTable = document.querySelector('ul');
      itmTable.className = 'collection with-header';
      const itemLi = document.createElement('li');

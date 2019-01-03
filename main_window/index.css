@@ -8,6 +8,7 @@ body {padding: 0px;margin: 0px;background-color: #2D2D30;border: 1px solid #6821
    font-family: sans-serif;
    }
 
+
    #title {
    
     position: absolute;
@@ -19,6 +20,27 @@ body {padding: 0px;margin: 0px;background-color: #2D2D30;border: 1px solid #6821
     font-size: 14px;
    
    }
+
+   #title-bar-btns {
+    position: absolute;
+    right: 0px;
+   }
+   
+   
+   
+   #title-bar-btns button {
+    background: transparent;
+    border: transparent;
+    color: white;
+    font-size: 15px;
+   }
+   
+   
+   
+   #title-bar-btns button:hover {
+    background-color: #3F3F41;
+   
+}
 
    #list_section{
        background: rgb(35, 35, 35);

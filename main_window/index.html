@@ -7,30 +7,39 @@
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel="stylesheet" href="index.css">
-    
+
     <script src="index.js"></script>
 </head>
 
 <body>
     <div id="title-bar">
         <div id="title">Home-Cuisiney</div>
+        <div id="title-bar-btns">
+
+            <button id="min-btn" onclick="mnuAction(2);">-</button>
+
+            <button id="max-btn" onclick="mnuAction(1);">+</button>
+
+            <button id="close-btn" onclick="mnuAction(0);"><img src="../src/ic_close.svg" alt="close"></button>
+
+        </div>
     </div>
 
     <div id="main_body">
         <div id="list_section" style="right:627px">
 
             <ul>
-               <li>item1</li>
+                <li>item1</li>
             </ul>
-            
+
         </div>
         <div id="list_details" style="width:627px">
-                <div id="drag"></div>
-                <div class="main_body">
-                    <h1>List item Details Title</h1>
-                    <button onclick="loadListItem();">Click</button>
-                </div>
-            
+            <div id="drag"></div>
+            <div class="main_body">
+                <h1>List item Details Title</h1>
+                <button onclick="loadListItem();">Click</button>
+            </div>
+
         </div>
     </div>
 </body>

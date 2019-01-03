@@ -6,15 +6,18 @@ let mainWindow, addItemWindow;
 const {
     app,
     BrowserWindow,
-    Menu
+    Menu,
+    ipcMain
 } = electron;
 
 app.on('ready', function () {
     mainWindow = new BrowserWindow({
         width: 800,
         height: 600,
-        titleBarStyle: 'hidden'
+        titleBarStyle: 'hidden',
+        frame: process.platform == 'darwin'
     });
+
 
     mainWindow.loadURL(url.format({
         pathname: path.join(__dirname, './main_window/index.html'),
@@ -28,7 +31,6 @@ app.on('ready', function () {
     mainWindow.on('closed', function () {
         app.quit();
     });
-
 
 });
 
@@ -78,6 +80,7 @@ const menuTemplate = [{
     label:'Tools',
     submenu: [{
         label:'Toggle Dev. tool',
+        accelerator: process.platform == 'darwin' ? 'Command + Shift + D' : 'Ctrl + Shift + D',
         click(){
             BrowserWindow.getFocusedWindow().toggleDevTools();
         }
