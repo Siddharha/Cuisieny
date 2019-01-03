@@ -24,6 +24,7 @@ body {padding: 0px;margin: 0px;background-color: #2D2D30;border: 1px solid #6821
    #title-bar-btns {
     position: absolute;
     right: 0px;
+
    }
    
    
@@ -33,6 +34,7 @@ body {padding: 0px;margin: 0px;background-color: #2D2D30;border: 1px solid #6821
     border: transparent;
     color: white;
     font-size: 15px;
+    -webkit-app-region: no-drag;
    }
    
    

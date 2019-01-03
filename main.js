@@ -61,27 +61,27 @@ function showAddItemWindow() {
 const menuTemplate = [{
     label: 'File',
     submenu: [{
-            label: 'Add Cuisine',
-            accelerator: process.platform == 'darwin' ? 'Command + Shift + A' : 'Ctrl + Shift + A',
-            click() {
-                showAddItemWindow();
-            }
-        },
-        {
-            label: 'Exit',
-            accelerator: process.platform == 'darwin' ? 'Command + Shift + X' : 'Ctrl + Shift + X',
-            click() {
-                app.exit();
-            }
+        label: 'Add Cuisine',
+        accelerator: process.platform == 'darwin' ? 'Command + Shift + A' : 'Ctrl + Shift + A',
+        click() {
+            showAddItemWindow();
         }
+    },
+    {
+        label: 'Exit',
+        accelerator: process.platform == 'darwin' ? 'Command + Shift + X' : 'Ctrl + Shift + X',
+        click() {
+            app.exit();
+        }
+    }
     ]
 },
 {
-    label:'Tools',
+    label: 'Tools',
     submenu: [{
-        label:'Toggle Dev. tool',
+        label: 'Toggle Dev. tool',
         accelerator: process.platform == 'darwin' ? 'Command + Shift + D' : 'Ctrl + Shift + D',
-        click(){
+        click() {
             BrowserWindow.getFocusedWindow().toggleDevTools();
         }
     }]
@@ -93,3 +93,16 @@ if (process.platform == 'darwin') {
         label: "Cuisieny"
     });
 }
+
+ipcMain.on('mnu:control', function (e, mnuChoice) {
+    var theWindow = BrowserWindow.getFocusedWindow();
+    switch (mnuChoice) {
+        case 0:   
+            console.log("closed!");
+            theWindow.close();
+            break;
+
+        default:
+            break;
+    }
+});

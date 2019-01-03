@@ -1,5 +1,5 @@
 const electron = require('electron');
-const {app,ipcRenderer,remote} = electron;
+const {ipcRenderer} = electron;
 
  
 var isResizing = false,
@@ -54,4 +54,10 @@ function loadListItem(){
     
 
     
+}
+
+function mnuAction(mnuChoice){
+    console.log("kjhkj");
+    
+    ipcRenderer.send('mnu:control',mnuChoice);
 }
