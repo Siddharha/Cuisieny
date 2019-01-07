@@ -12,7 +12,12 @@
 </head>
 
 <body>
-    <div id="title-bar">
+    <div id="title-bar" style="-moz-user-select: none;
+    -webkit-user-select: none;
+     -ms-user-select:none;
+      user-select:none;
+      -o-user-select:none;"
+       unselectable="on" onselectstart="return false;" onmousedown="return false;">
 
         <div id="title">Home-Cuisiney</div>
         <div id="title-bar-btns">
@@ -44,9 +49,13 @@
       -ms-user-select:none;
        user-select:none;
        -o-user-select:none;"
-        unselectable="on" onselectstart="return false;" onmousedown="return false;">
+        unselectable="on" onselectstart="return false;" onmousedown="return true;">
         <div id="list_section" style="right:627px">
 
+            <div id="searchBr">
+                <img src="../src/ic_search.svg" alt="Search">
+                <input type="text" placeholder="Search Menu" id="etSearch">
+            </div>
             <ul id="left-menu-list">
 
             </ul>
