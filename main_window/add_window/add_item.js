@@ -1,12 +1,18 @@
+const electron = require('electron');
+const {ipcRenderer} = electron;
 
+$(function () {
+    
+});
 function clkAddItem(){
-    let title = document.getElementById("etTitle").value;
-    console.log(title);
+    
+    var title_str = $('#etTitle').val();
+    console.log(title_str);
+    
 }
 
 function clkCancel(){
-    console.log("not implemented!");
-    
+    ipcRenderer.send('mnu:control',0);
 }
 
 

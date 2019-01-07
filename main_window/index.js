@@ -30,9 +30,13 @@ $(function () {
             return;
 
         var offsetRight = container.width() - (e.clientX - container.offset().left);
-
-        left.css('right', offsetRight);
-        right.css('width', offsetRight);
+        if((offsetRight >=200) &&(offsetRight+100 <=container.width())){
+            left.css('right', offsetRight);
+            right.css('width', offsetRight);
+        }else{
+            offsetRight = offsetRight;
+        }
+       
     }).on('mouseup', function (e) {
         // stop resizing
         isResizing = false;
@@ -60,4 +64,9 @@ function mnuAction(mnuChoice){
     console.log("kjhkj");
     
     ipcRenderer.send('mnu:control',mnuChoice);
+}
+
+function addItemPopup(){
+    ipcRenderer.send('mnu:control',3);
+    $('.dropdown-content').style.display = "none";
 }

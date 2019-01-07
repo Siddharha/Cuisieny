@@ -24,26 +24,31 @@
             <button id="close-btn" onclick="mnuAction(0);"><img src="../src/ic_close.svg" alt="close"></button>
 
         </div>
-    <div id="title-menu">
-        <div id="title-menu-root">
+        <div id="title-menu">
+            <div id="title-menu-root">
                 <div class="dropdownFile">
-                        <button class="dropbtn">File</button>
-                        <div class="dropdown-content">
-                          <a href="#">Add Cuisine</a>
-                          <a href="#">Exit</a>
-                        </div>
-                      </div>
+                    <button class="dropbtn">File</button>
+                    <div class="dropdown-content">
+                        <a href="#" onclick="addItemPopup();">Add Cuisine</a>
+                        <a href="#" onclick="mnuAction(0);">Exit</a>
+                    </div>
+                </div>
 
-<!-- ----------------------------one Item---------------- -->
+                <!-- ----------------------------one Item---------------- -->
+            </div>
         </div>
     </div>
-    </div>
 
-    <div id="main_body">
+    <div id="main_body" style="-moz-user-select: none;
+     -webkit-user-select: none;
+      -ms-user-select:none;
+       user-select:none;
+       -o-user-select:none;"
+        unselectable="on" onselectstart="return false;" onmousedown="return false;">
         <div id="list_section" style="right:627px">
 
             <ul id="left-menu-list">
-                
+
             </ul>
 
         </div>

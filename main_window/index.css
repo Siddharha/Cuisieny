@@ -41,7 +41,7 @@ body {padding: 0px;margin: 0px;background-color: #2D2D30;border: 1px solid #6821
    
    #title-bar-btns button:hover {
     background-color: #3F3F41;
-   
+    outline: none; 
 }
 
    #list_section{
@@ -108,8 +108,8 @@ body {padding: 0px;margin: 0px;background-color: #2D2D30;border: 1px solid #6821
 
    #drag {
     position: absolute;
-    top: 1px;
-    height: calc(100% - 3px);
+    top: 0px;
+    height: calc(100% - 0px);
     width: 3px;
     cursor: ew-resize;
     background: #444444;
@@ -141,7 +141,7 @@ body {padding: 0px;margin: 0px;background-color: #2D2D30;border: 1px solid #6821
 
 #title-menu-root > button:hover {
     background-color: #3F3F41;
-  
+     outline: none; 
    
 }
 .dropbtn {
@@ -150,7 +150,7 @@ body {padding: 0px;margin: 0px;background-color: #2D2D30;border: 1px solid #6821
     font-size: 14px;
     padding-right: 10px;
     border: none;
-    
+    outline: none; 
   }
   
   .dropdownFile {
@@ -167,6 +167,8 @@ body {padding: 0px;margin: 0px;background-color: #2D2D30;border: 1px solid #6821
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
+    outline: none; 
+    -webkit-app-region: no-drag;
   }
   
   .dropdown-content a {
@@ -174,14 +176,21 @@ body {padding: 0px;margin: 0px;background-color: #2D2D30;border: 1px solid #6821
     padding: 12px 16px;
     text-decoration: none;
     display: block;
+    
   }
   
   .dropdown-content a:hover {
       background-color: rgb(100, 100, 100);
       color: whitesmoke;
+      outline: none; 
 
     }
   
-  .dropdownFile:hover .dropdown-content {display: block;}
+  .dropdownFile:hover .dropdown-content 
+  {display: block;
+   
+}
   
-  .dropdownFile:hover .dropbtn {background-color: #585858;}
+  .dropdownFile:hover .dropbtn {
+      background-color: #585858;
+      outline: none; }

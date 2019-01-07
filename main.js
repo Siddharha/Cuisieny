@@ -26,7 +26,8 @@ app.on('ready', function () {
     }));
 
     const mainMenu = Menu.buildFromTemplate(menuTemplate);
-    Menu.setApplicationMenu(mainMenu);
+    // Menu.setApplicationMenu(mainMenu);
+    mainWindow.setMenu(mainMenu)
 
     mainWindow.on('closed', function () {
         app.quit();
@@ -43,7 +44,8 @@ function showAddItemWindow() {
         minimizable: false,
         titleBarStyle: 'hidden',
         parent: mainWindow,
-        modal: true
+        modal: true,
+        frame: process.platform == 'darwin'
 
     });
 
@@ -53,11 +55,27 @@ function showAddItemWindow() {
         slashes: true
     }));
 
-    addItemWindow.webContents.openDevTools({
-        mode: 'undocked'
-    });
+    // addItemWindow.webContents.openDevTools({
+    //     mode: 'undocked'
+    // });
+
+    const addItemMenu = Menu.buildFromTemplate(addMenuTemplate);
+    // Menu.setApplicationMenu(mainMenu);
+    addItemWindow.setMenu(addItemMenu)
 }
 
+const addMenuTemplate = [
+    {
+        label: 'Tools',
+        submenu: [{
+            label: 'Toggle Dev. tool',
+            accelerator: process.platform == 'darwin' ? 'Command + Shift + D' : 'Ctrl + Shift + D',
+            click() {
+                BrowserWindow.getFocusedWindow().toggleDevTools();
+            }
+        }]
+    }
+];
 const menuTemplate = [{
     label: 'File',
     submenu: [{
@@ -98,18 +116,26 @@ ipcMain.on('mnu:control', function (e, mnuChoice) {
     var theWindow = BrowserWindow.getFocusedWindow();
     switch (mnuChoice) {
         case 0:
-            console.log("hi");
 
             theWindow.close();
+
+            if (theWindow == addItemWindow) {
+                addItemWindow == null;
+                console.log("closed add menu!");
+
+            }
             break;
         case 1:
-            console.log("hi");
+
             if (theWindow.isMaximized()) { theWindow.unmaximize(); } else { theWindow.maximize(); }
 
             break;
         case 2:
-            console.log("hi");
+
             theWindow.minimize();
+            break;
+        case 3:
+            showAddItemWindow();
             break;
         default:
             break;
