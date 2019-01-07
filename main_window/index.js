@@ -43,7 +43,7 @@ $(function () {
 
 function loadListItem(){
     
-     const itmTable = document.querySelector('ul');
+     const itmTable = document.querySelector('#left-menu-list');
      itmTable.className = 'collection with-header';
      const itemLi = document.createElement('li');
      itemLi.className = 'collection-item';

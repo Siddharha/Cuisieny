@@ -97,11 +97,20 @@ if (process.platform == 'darwin') {
 ipcMain.on('mnu:control', function (e, mnuChoice) {
     var theWindow = BrowserWindow.getFocusedWindow();
     switch (mnuChoice) {
-        case 0:   
-            console.log("closed!");
+        case 0:
+            console.log("hi");
+
             theWindow.close();
             break;
+        case 1:
+            console.log("hi");
+            if (theWindow.isMaximized()) { theWindow.unmaximize(); } else { theWindow.maximize(); }
 
+            break;
+        case 2:
+            console.log("hi");
+            theWindow.minimize();
+            break;
         default:
             break;
     }
