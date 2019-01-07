@@ -26,8 +26,8 @@ app.on('ready', function () {
     }));
 
     const mainMenu = Menu.buildFromTemplate(menuTemplate);
-    // Menu.setApplicationMenu(mainMenu);
-    mainWindow.setMenu(mainMenu)
+     Menu.setApplicationMenu(mainMenu);
+    //mainWindow.setMenu(mainMenu)
 
     mainWindow.on('closed', function () {
         app.quit();

@@ -11,7 +11,10 @@ $(function () {
 
     if(process.platform =='darwin'){
         let main_custom_control = document.querySelector("#title-bar-btns");
+        let main_custom_menu = document.querySelector("#title-menu");
+        
         main_custom_control.style.visibility = 'hidden';
+        main_custom_menu.style.visibility = 'hidden';
     }
 
     var container = $('#main_body'),
