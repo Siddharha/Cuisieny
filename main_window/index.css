@@ -47,7 +47,7 @@ body {padding: 0px;margin: 0px;background-color: #2D2D30;border: 1px solid #6821
    #list_section{
        background: rgb(35, 35, 35);
        left: 0px;
-       height: calc(100% - 20px);
+       /*height: calc(100% - 20px);*/
        /* resize: horizontal;
        overflow: auto; */
        color: white;
@@ -201,7 +201,7 @@ body {padding: 0px;margin: 0px;background-color: #2D2D30;border: 1px solid #6821
           padding: 5px;
           /* align-content: center; */
           display: inline-flex;
-          width: calc(100% - 0px);
+          
       }
 
       #searchBr img{display: -webkit-box;width: 18px;height: 18px;/* color: #ff1f1f; */}
